@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FileUpload = () => {
+const App = () => {
     const [file, setFile] = useState(null);
     const [message, setMessage] = useState('');
     const [fileUrl, setFileUrl] = useState('');
@@ -18,10 +18,10 @@ const FileUpload = () => {
 
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('upload_preset', 'kjhack'); // Replace with your unsigned preset name
+        formData.append('upload_preset', 'fileUpload'); // Replace with your unsigned preset name
 
         try {
-            const response = await fetch(`https://api.cloudinary.com/v1_1/dnxwlb64j/image/upload`, {
+            const response = await fetch(`https://api.cloudinary.com/v1_1/dtwyvz1lv/image/upload`, {
                 method: 'POST',
                 body: formData,
             });
@@ -55,4 +55,4 @@ const FileUpload = () => {
     );
 };
 
-export default FileUpload;
+export default App;
