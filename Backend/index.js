@@ -112,7 +112,7 @@ app.post('/forgot-password', async (req, res) => {
             return res.send({ success:false,message: 'User not found' });
         }
 
-        user.password = password; // Hash the password in production
+        user.password = password; 
         await user.save();
 
         res.send({ success:true,message: 'Password updated successfully' });
